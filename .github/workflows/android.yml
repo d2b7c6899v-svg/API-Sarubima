@@ -29,11 +29,12 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install buildozer Cython==0.29.33
 
+      
       - name: Build APK
+        env:
+          PIP_NO_BINARY: "charset-normalizer"
         run: |
-
           set -o pipefail
-
           yes | buildozer -v android debug
 
       - name: Save APK
@@ -41,3 +42,4 @@ jobs:
         with:
           name: api-sarubima-debug-apk
           path: bin/*.apk
+
