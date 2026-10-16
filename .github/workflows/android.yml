@@ -19,10 +19,12 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Pin pip version
         run: |
-          sudo apt-get update
-          sudo apt-get install -y git zip unzip openjdk-17-jdk autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev cmake libffi-dev libssl-dev automake
+
+          python -m pip install pip==23.3.1
+
+          python -m pip --version
 
       - name: Install Buildozer
         run: |
