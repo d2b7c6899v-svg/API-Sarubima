@@ -32,8 +32,6 @@ jobs:
           python -m pip install pip==23.3.1
           python -m pip install buildozer Cython==0.29.33
 
-          python -m pip install buildozer Cython==0.29.33
-
       
       - name: Build APK
         env:
